@@ -924,3 +924,7 @@ GEARMAN_MYSQL_TABLE=gearman_queue
 
 ### ELK Stack ##################################################
 ELK_VERSION=7.9.1
+
+### NGROK ################################################
+NGROK_PORT=4040
+NGROK_AUTHTOKEN=

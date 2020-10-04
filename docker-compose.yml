@@ -1813,3 +1813,18 @@ services:
         - ${DATA_PATH_HOST}/tomcat/logs:/usr/local/tomcat/logs
       # restart: always
 
+### ngrok ####################################################
+    ngrok:
+      build:
+        context: ./ngrok
+      ports:
+        - "${NGROK_PORT}:4040"
+      environment:
+        - NGROK_AUTH=${NGROK_AUTHTOKEN}
+        - NGROK_REGION=ap
+        - NGROK_PORT=nginx:80
+      networks:
+        - frontend
+        - backend
+      depends_on:
+        - nginx
